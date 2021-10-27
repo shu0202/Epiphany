@@ -10,7 +10,7 @@
 ## Game Name:
 ### Introduction:
 
-### Fatures:
+### Features:
 
 ### Coding requiements:
 1. Generation of random game sets or events
