@@ -7,9 +7,9 @@
 ### Team member 2
 ### Name: Chang Ching Yin
 ### UID: 3035705453
-## Game Name:
+## Game Name: 
 ### Introduction:
-This rpg game is inspired by the 2016 game 'Undertale'. 
+This game is a role-playing game inspired by the 2015 game 'Undertale'.
 
 ### Features:
 
