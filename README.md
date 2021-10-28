@@ -9,7 +9,7 @@
 ### UID: 3035705453
 ## Game Name: 
 ### Introduction:
-This game is a role-playing game inspired by the 2015 game 'Undertale'.
+This game is a single player role-playing game inspired by the 2015 game 'Undertale'.
 
 ### Features:
 
