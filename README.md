@@ -15,7 +15,8 @@ This game is a role-playing game inspired by the 2015 game 'Undertale'.
 
 ### Coding requiements:
 1. Generation of random game sets or events
-   - The player can
+
+   - The player has a probability to obtain random drop (armour, weapon, powerups) from killing opponents.
 2. Data structures for storing game status
    - something
 3. Dynamic memory management
