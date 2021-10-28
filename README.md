@@ -9,6 +9,7 @@
 ### UID: 3035705453
 ## Game Name:
 ### Introduction:
+This rpg game is inspired by the 2016 game 'Undertale'. 
 
 ### Features:
 
