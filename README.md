@@ -9,7 +9,9 @@
 ### UID: 3035705453
 ## Game Name: Epiphany
 ### Introduction:
-This game is a single player role-playing game inspired by the 2015 game 'Undertale'.
+This game is a single player role-playing game inspired by the 2015 game 'Undertale'. The game sets out at a mysterious forest where the protagonist found himself waking up in
+
+At first glance, Epiphany may appear to be the same as any other ordinary rpg games. But soon the player will notice some twists about it...
 
 ### Features:
 
@@ -33,7 +35,6 @@ This game is a single player role-playing game inspired by the 2015 game 'Undert
      - Hp of player, Atk of player etc..
      - No. of monsters remain.
      - The position where the player is at.
-     
 5. Program codes in multiple files
    - Program codes for main menu (game lobby), off-battle (walking in the map) and in-battle (monster encounter) are separated in different files.
 
