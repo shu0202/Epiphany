@@ -35,5 +35,6 @@ At first glance, Epiphany may appear to be the same as any other ordinary rpg ga
    - No. of monsters remain.
    - The position where the player is at. 
 5. Program codes in multiple files
-   - Program codes for main menu (game lobby), off-battle (walking in the map) and in-battle (monster encounter) are separated in different files.
+   - Program codes for main menu (game lobby), off-battle (walking in the map) and in-battle (monster encounter) 
+     are separated in different files.
 
