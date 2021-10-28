@@ -18,7 +18,7 @@ This game is a single player role-playing game inspired by the 2015 game 'Undert
    - The player has a probability to obtain random drop (armour, weapon) from killing opponents.
    - The player will have random encounters when moving in the map
    - The oponent is randomly seleted from a list of monsters.
-   - During combat, the player has a deafult 5% critical chance to deal 30% more damage and such chance can be affected by the player's current equipments.
+   - During combat, both the player and monsters has a deafult 5% critical chance to deal 30% more damage. Such chance for the player can be affected by current equipments.
 2. Data structures for storing game status
    - something
 3. Dynamic memory management
