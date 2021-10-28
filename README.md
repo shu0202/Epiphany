@@ -15,7 +15,7 @@ This game is a single player role-playing game inspired by the 2015 game 'Undert
 
 ### Coding requiements:
 1. Generation of random game sets or events
-   - The player has a probability to obtain random drop (armour, weapon) from killing opponents.
+   - The player has a probability to obtain random drop (equipments: e.g. armour, weapon) from killing opponents.
    - The player will have random encounters when moving in the map
    - The oponent is randomly seleted from a list of monsters.
    - During combat, both the player and monsters has a deafult 5% critical chance to deal 30% more damage. Such chance for the player can be affected by current equipments.
@@ -25,9 +25,9 @@ This game is a single player role-playing game inspired by the 2015 game 'Undert
    - The crit chance of the player can be stored in an integer variable called crit.
    - The name of the player is stored in a string variable called name.
 3. Dynamic memory management
-   - something
+   - After each encounter, the data of the opponents is erased from the program to confine memory usage.
 4. File input/output (e.g., for loading/saving game status)
    - something
 5. Program codes in multiple files
-   - something
+   - Program codes for main menu (game lobby), off-battle (walking in the map) and in-battle (monster encounter) are separated in different files.
 
