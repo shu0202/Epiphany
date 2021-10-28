@@ -9,9 +9,9 @@
 ### UID: 3035705453
 ## Game Name: Epiphany
 ### Introduction:
-This game is a single player role-playing game inspired by the 2015 game 'Undertale'. The game sets out at a mysterious forest where the protagonist found himself waking up in
+This game is a single player role-playing game inspired by the 2015 game 'Undertale'. The game sets out at a mysterious forest where the protagonist found himself waking up in. At first glance, Epiphany may appear to be the same as any other ordinary rpg games. But soon the player will notice some twists about it...
 
-At first glance, Epiphany may appear to be the same as any other ordinary rpg games. But soon the player will notice some twists about it...
+Game rule: There two maps signify two stages of the game. At each map, the player has to reach a certain point for a boss encounter by moving up, down, left, right. On his way, there are random monster encounters. The player can enter the 2nd stage only when he has done a boss encounter at the 1st stage. The starting points in the two maps represent game checkpoints. If the player's hp goes down to zero at any point of the game, he is respawn at the latest checkpoint. The goal of the player is to get to the final boss encounter in the second map. 
 
 ### Features:
 
