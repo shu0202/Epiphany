@@ -14,6 +14,7 @@ This game is a single player role-playing game inspired by the 2015 game 'Undert
 Game rule: There two maps signify two stages of the game. At each map, the player has to reach a certain point for a boss encounter by moving up, down, left, right. On his way, there are random monster encounters. The player can enter the 2nd stage only when he has done a boss encounter at the 1st stage. The starting points in the two maps represent game checkpoints. If the player's hp goes down to zero at any point of the game, he is respawn at the latest checkpoint. The goal of the player is to get to the final boss encounter in the second map. 
 
 ### Features:
+There will be a main menu where the player can choose game modes (start, continue, etc.) When the game starts the player can type their name and they will use this name throughout the gaming process. There are two maps that the users can explore. When the user is walking in the map, there are predefined chances for player to encounter a monster. A combat system will be implemented during the encounter. The game will feature some player status (Hp, atk, etc.) just like other RPG games. After the encounter the data of the monsters will be erased if the monster is killed. The player can quit the game anytime by choosing save in the option menu. 
 
 ### Coding requiements:
 1. Generation of random game sets or events
