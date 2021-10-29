@@ -27,6 +27,7 @@ There will be a main menu where the player can choose game modes (start, continu
    - The attack damage that the player can be dealt is stored in an integer variable called atk.
    - The crit chance of the player can be stored in an integer variable called crit.
    - The name of the player is stored in a string variable called name.
+   - Each monster will have a set of unique status (hp, atk, etc) and it is stored individually and can be erased.
 3. Dynamic memory management
    - After each encounter, the data of the opponents is erased from the program to confine memory usage.
 4. File input/output (e.g., for loading/saving game status)
