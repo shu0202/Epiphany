@@ -39,28 +39,28 @@ void newgame(){
         if (ch == 259){
             ypos = ypos - 1;
             if (ypos < 0){
-                ypos = ypos + 10;
+                ypos = ypos + 30;
             }
             print_map(map_no,xpos,ypos);
         }
         else if (ch == 258){
             ypos = ypos + 1;
             if (ypos > 30){
-                ypos = ypos - 10;
+                ypos = ypos - 30;
             }
             print_map(map_no,xpos,ypos);
         }
         else if (ch == 261){
             xpos = xpos + 1;
             if (xpos > 30){
-                xpos = xpos - 10;
+                xpos = xpos - 30;
             }
             print_map(map_no,xpos,ypos);
         }
         else if (ch == 260){
             xpos = xpos - 1;
             if (xpos < 0){
-                xpos = xpos + 10;
+                xpos = xpos + 30;
             }
             print_map(map_no,xpos,ypos);
         }
