@@ -45,14 +45,14 @@ void newgame(){
         }
         else if (ch == 258){
             ypos = ypos + 1;
-            if (ypos > 9){
+            if (ypos > 30){
                 ypos = ypos - 10;
             }
             print_map(map_no,xpos,ypos);
         }
         else if (ch == 261){
             xpos = xpos + 1;
-            if (xpos > 9){
+            if (xpos > 30){
                 xpos = xpos - 10;
             }
             print_map(map_no,xpos,ypos);
