@@ -87,13 +87,15 @@ void newgame(){
     bruce->atk = 100;
     strcpy(bruce->dead, "Be water my friend.");
     strcpy(bruce->talk, "I will teach you zhe quan dao!");
-    
-
-
-
-    getch();
-    clear();
-
+    //adventure in map
+    char map[30][30];
+    make_prop(map);
+    //for (int i=0; i<30;i++){
+    //    printw("%c ",map[0][i]);
+    //}
+    //refresh();
+    //getch();
+    //clear();
     print_map(map_no,xpos,ypos);
     while (true){
         if (ch == 259){

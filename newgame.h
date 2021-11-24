@@ -4,5 +4,6 @@
 #define NEWGAME_H
 
 void print_map(int map_no, int xpos, int ypos);
+void make_prop(char map [30][30]);
 
 #endif

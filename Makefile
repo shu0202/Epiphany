@@ -10,6 +10,9 @@ print_map.o: print_map.cpp newgame.h
 newgame.o: newgame.cpp newgame.h monster.h
 	g++ -c newgame.cpp
 
-main: main.o print_menu.o newgame.o print_map.o
-	g++ main.o print_menu.o newgame.o print_map.o -lncurses -o main
+map.o: map.cpp
+	g++ -c map.cpp
+
+main: main.o print_menu.o newgame.o print_map.o map.o
+	g++ main.o print_menu.o newgame.o print_map.o map.o -lncurses -o main
 
