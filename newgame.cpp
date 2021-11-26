@@ -8,7 +8,7 @@
 using namespace std;
 void newgame(){
     clear();
-    int xpos = 0;
+    int xpos = 29;
     int ypos = 0;
     int map_no = 0;
     char name[30];
@@ -87,44 +87,48 @@ void newgame(){
     bruce->atk = 100;
     strcpy(bruce->dead, "Be water my friend.");
     strcpy(bruce->talk, "I will teach you zhe quan dao!");
+
     //adventure in map
+
     char map[30][30];
     make_prop(map);
-    //for (int i=0; i<30;i++){
-    //    printw("%c ",map[0][i]);
-    //}
-    //refresh();
-    //getch();
-    //clear();
-    print_map(map_no,xpos,ypos);
+    for (int i=0;i<30;i++){
+        for (int j=0;j<30;j++){
+            printw("%c ",map[i][j]);
+        }
+        printw("\n");
+        refresh();
+    }
+    getch();
+    print_map(map,xpos,ypos);
     while (true){
         if (ch == 259){
             ypos = ypos - 1;
             if (ypos < 0){
                 ypos = ypos + 30;
             }
-            print_map(map_no,xpos,ypos);
+            print_map(map,xpos,ypos);
         }
         else if (ch == 258){
             ypos = ypos + 1;
             if (ypos > 29){
                 ypos = ypos - 30;
             }
-            print_map(map_no,xpos,ypos);
+            print_map(map,xpos,ypos);
         }
         else if (ch == 261){
             xpos = xpos + 1;
             if (xpos > 29){
                 xpos = xpos - 30;
             }
-            print_map(map_no,xpos,ypos);
+            print_map(map,xpos,ypos);
         }
         else if (ch == 260){
             xpos = xpos - 1;
             if (xpos < 0){
                 xpos = xpos + 30;
             }
-            print_map(map_no,xpos,ypos);
+            print_map(map,xpos,ypos);
         }
         ch = getch();
     }
