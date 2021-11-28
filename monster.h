@@ -2,6 +2,7 @@
 #define MY_STRUCT
 
 struct monster{
+    char name[10];
     int no;
     int hp;
     int atk;
@@ -10,7 +11,7 @@ struct monster{
     // Every monster has equal crit chance of 0.1;
 };
 
-struct player{
+struct player_stat{
     int hp;
     int atk;
     int crit_chance;

@@ -37,7 +37,7 @@ void print_choice(int choice){
     return;
 }
 
-int cave_op(player &player){
+int cave_op(player_stat &player){
     int ch;
     int choice = 1;
     clear();
@@ -99,7 +99,7 @@ void newgame(){
         monlist.push_back(i);
     }
     // get player name and initiallise player stats
-    player player1;
+    player_stat player1;
     printw("What is ur name?\n");
     refresh();
     getstr(player1.name);
@@ -117,6 +117,7 @@ void newgame(){
 
     //decleare monsters
     monster* flower = new monster;
+    flower->name = "Flower";
     flower->no = 1;
     flower->hp = 100;
     flower->atk = 2;
@@ -124,6 +125,7 @@ void newgame(){
     strcpy(flower->talk, "Thank you, kind man!");
 
     monster* robot = new monster;
+    robot->name = "Robot";
     robot->no = 2;
     robot->hp = 200;
     robot->atk = 30;
@@ -131,6 +133,7 @@ void newgame(){
     strcpy(robot->talk, "Thank you for understanding me.");
 
     monster* fishbone = new monster;
+    fishbone->name = "Fishbone";
     fishbone->no = 3;
     fishbone->hp = 100;
     fishbone->atk = 50;
@@ -138,6 +141,7 @@ void newgame(){
     strcpy(fishbone->talk, "Hope you like my fishbone crackers!");
 
     monster* flameboi = new monster;
+    flameboi->name = "Flameboi";
     flameboi->no = 4;
     flameboi->hp = 50;
     flameboi->atk = 250;
@@ -145,6 +149,7 @@ void newgame(){
     strcpy(flameboi->talk, "Lets enjoy marshmellow later!");
 
     monster* bigstone = new monster;
+    bigstone->name = "Bigstone";
     bigstone->no = 5;
     bigstone->hp = 250;
     bigstone->atk = 20;
@@ -152,6 +157,7 @@ void newgame(){
     strcpy(bigstone->talk, "You are my true love");
 
     monster* doggo = new monster;
+    doggo->name = "Doggo";
     doggo->no = 6;
     doggo->hp = 100;
     doggo->atk = 50;
@@ -159,6 +165,7 @@ void newgame(){
     strcpy(doggo->talk, "Can I be your pet?");
 
     monster* shoemaker = new monster;
+    shoemaker->name = "Shoemaker";
     shoemaker->no = 7;
     shoemaker->hp = 100;
     shoemaker->atk = 100;
@@ -166,6 +173,7 @@ void newgame(){
     strcpy(shoemaker->talk, "Do you want a new shoe, I can make you one.");
 
     monster* iceboi = new monster;
+    iceboi->name = "Iceboi";
     iceboi->no = 8;
     iceboi->hp = 150;
     iceboi->atk = 50;
@@ -173,6 +181,7 @@ void newgame(){
     strcpy(iceboi->talk, "Do you want any cold drink?");
 
     monster* birdman = new monster;
+    birdman->name = "Birdman";
     birdman->no = 9;
     birdman->hp = 100;
     birdman->atk = 50;
@@ -180,6 +189,7 @@ void newgame(){
     strcpy(birdman->talk, "Gok Gok Gok (Fly away happily)");
 
     monster* bruce = new monster;
+    bruce->name = "Bruce";
     bruce->no = 10;
     bruce->hp = 100;
     bruce->atk = 100;
@@ -284,6 +294,7 @@ void newgame(){
             }
             print_map(map,xpos,ypos);
         }
+
         if (f == 0 and monlist.size() != 0 and s!= 0){
             srand((unsigned) time(0));
             int monchance;
@@ -297,22 +308,13 @@ void newgame(){
                 monen = (rand() % mon_acc) + 1;
                 mon_acc = mon_acc - 1;
                 monem = monlist[monen-1];
-                //printw("mon delete: %d\n",monem);
-                //refresh();
                 vector<int>::iterator itr;
                 itr = lower_bound(monlist.begin(),monlist.end(),monem);
-                //printw("vector list: ");
-                //refresh();
-                //for (int k=0;k<monlist.size();k++){
-                //    printw("%d ",monlist[k]);
-                //    refresh();
-                //}
-                //printw("\n");
-                //refresh();
                 monlist.erase(itr);
-                //printw("erased\n");
+                
                 // in game monster battle
                 if (monem == 1 && mon_d[0] == 0){
+                    
                     printw("Monster encountered is Flower: %d",monem);
                     refresh();
                     delete flower;
