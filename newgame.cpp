@@ -88,6 +88,7 @@ int cave_op(player_stat *player){
 
 void newgame(){
     clear();
+    int spared_array[10] = {0};
     int xpos = 29;
     int ypos = 0;
     int mon_acc = 10;
@@ -108,7 +109,7 @@ void newgame(){
     refresh();
     player1->atk = 50;
     player1->hp = 200;
-    player1->crit_chance = 10;
+    player1->crit_chance = 0.1;
     printw("Storytelling\n");
     refresh();
     printw("Press any key to continue");
@@ -186,7 +187,7 @@ void newgame(){
     birdman->hp = 100;
     birdman->atk = 50;
     strcpy(birdman->dead, "Gok~~~~(Dies sadily)");
-    strcpy(birdman->talk, "Gok Gok Gok (Fly away happily)");
+    strcpy(birdman->talk, "Gok Gok Gok (Flies away happily)");
 
     monster* bruce = new monster;
     strcpy(bruce->name, "Bruce");
@@ -311,7 +312,6 @@ void newgame(){
                 vector<int>::iterator itr;
                 itr = lower_bound(monlist.begin(),monlist.end(),monem);
                 monlist.erase(itr);
-                
                 // in game monster battle
                 if (monem == 1 && mon_d[0] == 0){
                     
@@ -319,7 +319,15 @@ void newgame(){
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,flower);
+                    if (inbattle(player1,flower)==0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (){
+
+                    }
                     delete flower;
                     mon_d[0] = 1;
                 }

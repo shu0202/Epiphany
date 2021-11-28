@@ -14,7 +14,7 @@ struct monster{
 struct player_stat{
     int hp;
     int atk;
-    int crit_chance;
+    double crit_chance;
     char name[30];
 };
 

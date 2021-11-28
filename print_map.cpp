@@ -3,7 +3,6 @@
 #include <string>
 #include <ncurses.h>
 #include <stdlib.h>
-#include "newgame.h"
 using namespace std;
 
 void print_map(char map[30][30], int xpos, int ypos){

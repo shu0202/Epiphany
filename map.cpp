@@ -1,4 +1,6 @@
 #include <iostream>
+#include "monster.h"
+#include "newgame.h"
 using namespace std;
 
 void make_prop(char map[30][30]){

@@ -23,7 +23,7 @@ int inbattle(player_stat *player, monster *mon){
             battlechoice = 0;
             print_battle_menu(battlechoice, player, mon);
             ch = getch();  
-            while (ch != 13){
+            while (ch != 10){
                 clear();
                 if (ch == 119){
                     battlechoice -= 1;

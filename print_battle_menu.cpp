@@ -1,7 +1,8 @@
 #include <iostream>
 #include <ncurses.h>
 #include "monster.h"
-#include "newgame.h"
+//#include "newgame.h"
+#include "print_battle.h"
 using namespace std;
 
 void print_battle_menu(int battlechoice, player_stat *player, monster *mon){
