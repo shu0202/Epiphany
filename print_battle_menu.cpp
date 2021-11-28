@@ -12,6 +12,7 @@ void print_battle_menu(int battlechoice, player_stat *player, monster *mon){
         printw(" Attack<--\n");
         printw(" Talk\n");
         printw(" ___  ___  ___  ___  ___  ___  ___  ___ \n");
+        refresh();
     }
     else if (battlechoice == 1){
         printw(" Your turn:\n");
@@ -21,5 +22,6 @@ void print_battle_menu(int battlechoice, player_stat *player, monster *mon){
         printw(" Attack\n");
         printw(" Talk<--\n");
         printw(" ___  ___  ___  ___  ___  ___  ___  ___ \n");
+        refresh();
     }
 }
