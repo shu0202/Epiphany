@@ -5,7 +5,7 @@ print_menu.o: print_menu.cpp main.h
 	g++ -c print_menu.cpp
 
 
-print_map.o: print_map.cpp newgame.h
+print_map.o: print_map.cpp
 	g++ -c print_map.cpp
 
 map.o: map.cpp
@@ -17,7 +17,7 @@ print_battle_menu.o: print_battle_menu.cpp newgame.h monster.h print_battle.h
 inbattle.o: inbattle.cpp monster.h print_battle.h newgame.h
 	g++ -c inbattle.cpp
 
-newgame.o: newgame.cpp newgame.h monster.h
+newgame.o: newgame.cpp newgame.h monster.h inbattle.o print_map.o
 	g++ -c newgame.cpp
 
 

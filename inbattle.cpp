@@ -58,7 +58,7 @@ int inbattle(player_stat *player, monster *mon){
                     continue;
                 }
                 else{
-                    if (critchance <= player->crit_chance)
+                    if (critchance <= player->crit_chance){
                         printw("It's a critical hit!\n");
                         printw("%s got hit by %d\n", mon->name, (player->atk)*2);
                         refresh();
@@ -96,16 +96,16 @@ int inbattle(player_stat *player, monster *mon){
             }
             else{
                 if (critchance <= 0.1){
-                        printw("It's a critical hit!\n");
-                        printw("%s got hit by %d\n", player->name, (mon->atk)*2);
-                        refresh();
-                        player->hp -= (mon->atk)*2;
-                    }
-                    else{
-                        printw("%s got hit by %d\n", player->name, mon->atk);
-                        refresh();
-                        player->hp -= mon->atk;
-                    }
+                    printw("It's a critical hit!\n");
+                    printw("%s got hit by %d\n", player->name, (mon->atk)*2);
+                    refresh();
+                    player->hp -= (mon->atk)*2;
+                }
+                else{
+                    printw("%s got hit by %d\n", player->name, mon->atk);
+                    refresh();
+                    player->hp -= mon->atk;
+                }
             }
         }
         if (player->hp <= 0){

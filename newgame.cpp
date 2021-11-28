@@ -37,7 +37,7 @@ void print_choice(int choice){
     return;
 }
 
-int cave_op(player_stat &player){
+int cave_op(player_stat *player){
     int ch;
     int choice = 1;
     clear();
@@ -70,17 +70,17 @@ int cave_op(player_stat &player){
     }
     if (choice == 1){
         printw("Your choice is a sword, your attack has increased by 50\nPress any key to go back to map.");
-        player.atk = player.atk + 50;
+        player->atk = player->atk + 50;
         getch();
     }
     else if(choice == 2){
         printw("Your choice is a potion, your hp has been restored\nPress any key to go back to map.");
-        player.hp = 200;
+        player->hp = 200;
         getch();
     }
     else if(choice == 3){
         printw("Your choice is a gun, your critical chance has increased\nPress any key to go back to map.");
-        player.crit_chance = 50;
+        player->crit_chance = 50;
         getch();
     }
     return 1;
@@ -99,16 +99,16 @@ void newgame(){
         monlist.push_back(i);
     }
     // get player name and initiallise player stats
-    player_stat player1;
+    player_stat* player1 = new player_stat;
     printw("What is ur name?\n");
     refresh();
-    getstr(player1.name);
+    getstr(player1->name);
     refresh();
-    printw("Hello %s, welcome to epithany\n",player1.name);
+    printw("Hello %s, welcome to epithany\n",player1->name);
     refresh();
-    player1.atk = 50;
-    player1.hp = 200;
-    player1.crit_chance = 10;
+    player1->atk = 50;
+    player1->hp = 200;
+    player1->crit_chance = 10;
     printw("Storytelling\n");
     refresh();
     printw("Press any key to continue");
