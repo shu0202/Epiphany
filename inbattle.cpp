@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <ncurses.h>
 #include "monster.h"
 #include "newgame.h"
+#include "print_battle.h"
 using namespace std;
 
 int inbattle(player_stat *player, monster *mon){

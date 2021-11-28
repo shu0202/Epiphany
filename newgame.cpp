@@ -117,7 +117,7 @@ void newgame(){
 
     //decleare monsters
     monster* flower = new monster;
-    flower->name = "Flower";
+    strcpy(flower->name, "Flower");
     flower->no = 1;
     flower->hp = 100;
     flower->atk = 2;
@@ -125,7 +125,7 @@ void newgame(){
     strcpy(flower->talk, "Thank you, kind man!");
 
     monster* robot = new monster;
-    robot->name = "Robot";
+    strcpy(robot->name, "Robot");
     robot->no = 2;
     robot->hp = 200;
     robot->atk = 30;
@@ -133,7 +133,7 @@ void newgame(){
     strcpy(robot->talk, "Thank you for understanding me.");
 
     monster* fishbone = new monster;
-    fishbone->name = "Fishbone";
+    strcpy(fishbone->name, "Fishbone");
     fishbone->no = 3;
     fishbone->hp = 100;
     fishbone->atk = 50;
@@ -141,7 +141,7 @@ void newgame(){
     strcpy(fishbone->talk, "Hope you like my fishbone crackers!");
 
     monster* flameboi = new monster;
-    flameboi->name = "Flameboi";
+    strcpy(flameboi->name, "Flameboi");
     flameboi->no = 4;
     flameboi->hp = 50;
     flameboi->atk = 250;
@@ -149,7 +149,7 @@ void newgame(){
     strcpy(flameboi->talk, "Lets enjoy marshmellow later!");
 
     monster* bigstone = new monster;
-    bigstone->name = "Bigstone";
+    strcpy(bigstone->name, "Bigstone");
     bigstone->no = 5;
     bigstone->hp = 250;
     bigstone->atk = 20;
@@ -157,7 +157,7 @@ void newgame(){
     strcpy(bigstone->talk, "You are my true love");
 
     monster* doggo = new monster;
-    doggo->name = "Doggo";
+    strcpy(doggo->name, "Doggo");
     doggo->no = 6;
     doggo->hp = 100;
     doggo->atk = 50;
@@ -165,7 +165,7 @@ void newgame(){
     strcpy(doggo->talk, "Can I be your pet?");
 
     monster* shoemaker = new monster;
-    shoemaker->name = "Shoemaker";
+    strcpy(shoemaker->name, "Shoemaker");
     shoemaker->no = 7;
     shoemaker->hp = 100;
     shoemaker->atk = 100;
@@ -173,7 +173,7 @@ void newgame(){
     strcpy(shoemaker->talk, "Do you want a new shoe, I can make you one.");
 
     monster* iceboi = new monster;
-    iceboi->name = "Iceboi";
+    strcpy(iceboi->name, "Iceboi");
     iceboi->no = 8;
     iceboi->hp = 150;
     iceboi->atk = 50;
@@ -181,7 +181,7 @@ void newgame(){
     strcpy(iceboi->talk, "Do you want any cold drink?");
 
     monster* birdman = new monster;
-    birdman->name = "Birdman";
+    strcpy(birdman->name, "Birdman");
     birdman->no = 9;
     birdman->hp = 100;
     birdman->atk = 50;
@@ -189,7 +189,7 @@ void newgame(){
     strcpy(birdman->talk, "Gok Gok Gok (Fly away happily)");
 
     monster* bruce = new monster;
-    bruce->name = "Bruce";
+    strcpy(bruce->name, "Bruce");
     bruce->no = 10;
     bruce->hp = 100;
     bruce->atk = 100;
@@ -315,62 +315,92 @@ void newgame(){
                 // in game monster battle
                 if (monem == 1 && mon_d[0] == 0){
                     
-                    printw("Monster encountered is Flower: %d",monem);
+                    printw("Monster encountered is Flower: %d\n",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,flower);
                     delete flower;
                     mon_d[0] = 1;
                 }
                 else if (monem == 2 && mon_d[1] == 0){
                     printw("Monster encountered is Robot: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,robot);
                     delete robot;
                     mon_d[1] = 1;
                 }
                 else if (monem == 3 && mon_d[2] == 0){
                     printw("Monster encountered is Fishbone: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,fishbone);
                     delete fishbone;
                     mon_d[2] = 1;
                 }
                 else if (monem == 4 && mon_d[3] == 0){
                     printw("Monster encountered is Flameboi: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,flameboi);
                     delete flameboi;
                     mon_d[3] = 1;
                 }
                 else if (monem == 5 && mon_d[4] == 0){
                     printw("Monster encountered is Bigstone: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,bigstone);
                     delete bigstone;
                     mon_d[4] = 1;
                 }
                 else if (monem == 6 && mon_d[5] == 0){
                     printw("Monster encountered is Doggo: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,doggo);
                     delete doggo;
                     mon_d[5] = 1;
                 }
                 else if (monem == 7 && mon_d[6] == 0){
                     printw("Monster encountered is Shoemaker: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,shoemaker);
                     delete shoemaker;
                     mon_d[6] = 1;
                 }
                 else if (monem == 8 && mon_d[7] == 0){
                     printw("Monster encountered is Iceboi: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,iceboi);
                     delete iceboi;
                     mon_d[7] = 1;
                 }
                 else if (monem == 9 && mon_d[8] == 0){
                     printw("Monster encountered is Birdman: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,birdman);
                     delete birdman;
                     mon_d[8] = 1;
                 }
                 else if (monem == 10 && mon_d[9] == 0){
                     printw("Monster encountered is Bruce: %d",monem);
+                    printw("Press any key to enter battle\n");
                     refresh();
+                    getch();
+                    inbattle(player1,bruce);
                     delete bruce;
                     mon_d[9] = 1;
                 }

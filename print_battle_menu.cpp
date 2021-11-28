@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ncurses.h>
 #include "monster.h"
 #include "newgame.h"
 using namespace std;
