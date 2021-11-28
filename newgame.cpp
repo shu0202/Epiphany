@@ -335,6 +335,7 @@ void newgame(){
                         mon_d[0] = 1;
                     }
                 }
+                
                 else if (monem == 2 && mon_d[1] == 0){
                     printw("Monster encountered is robot: %d",monem);
                     printw("Press any key to enter battle\n");
@@ -357,6 +358,7 @@ void newgame(){
                         mon_d[1] = 1;
                     }
                 }
+                
                 else if (monem == 3 && mon_d[2] == 0){
                     printw("Monster encountered is fishbone: %d",monem);
                     printw("Press any key to enter battle\n");
