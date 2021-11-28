@@ -496,6 +496,7 @@ void newgame(){
                         mon_d[7] = 1;
                     }
                 }
+                
                 else if (monem == 9 && mon_d[8] == 0){
                     printw("Monster encountered is birdman: %d",monem);
                     printw("Press any key to enter battle\n");
@@ -518,6 +519,7 @@ void newgame(){
                         mon_d[8] = 1;
                     }
                 }
+                
                 else if (monem == 10 && mon_d[9] == 0){
                     printw("Monster encountered is bruce: %d",monem);
                     printw("Press any key to enter battle\n");
