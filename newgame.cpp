@@ -88,7 +88,7 @@ int cave_op(player_stat *player){
 
 void newgame(){
     clear();
-    int spared_array[10] = {0};
+    int alive_array[10] = {0};
     int xpos = 29;
     int ypos = 0;
     int mon_acc = 10;
@@ -203,14 +203,13 @@ void newgame(){
     make_prop(map);
     
     int mon_d[10] = {0};
-    int mon_a[10] = {0};
     int s=0;
     int cave = 0;
 
     print_map(map,xpos,ypos);
     while (true){
         int f = 0;
-        
+        int battle_result;
         if (ch == 259){
             ypos = ypos - 1;
             if (ypos < 0){
@@ -315,102 +314,224 @@ void newgame(){
                 // in game monster battle
                 if (monem == 1 && mon_d[0] == 0){
                     
-                    printw("Monster encountered is Flower: %d\n",monem);
+                    printw("Monster encountered is flower: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    if (inbattle(player1,flower)==0){
+                    battle_result = inbattle(player1,flower);
+                    if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
                         printmap(map,xpos,ypos);
                         continue;
                     }
-                    else if (){
-
+                    else if (battle_result == 1){
+                        delete flower;
+                        mon_d[0] = 1;
                     }
-                    delete flower;
-                    mon_d[0] = 1;
+                    else if (battle_result == 2){
+                        delete flower;
+                        alive_array[0] = 1;
+                        mon_d[0] = 1;
+                    }
                 }
                 else if (monem == 2 && mon_d[1] == 0){
-                    printw("Monster encountered is Robot: %d",monem);
+                    printw("Monster encountered is robot: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,robot);
-                    delete robot;
-                    mon_d[1] = 1;
+                    battle_result = inbattle(player1,robot);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete robot;
+                        mon_d[1] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete robot;
+                        alive_array[1] = 1;
+                        mon_d[1] = 1;
+                    }
                 }
                 else if (monem == 3 && mon_d[2] == 0){
-                    printw("Monster encountered is Fishbone: %d",monem);
+                    printw("Monster encountered is fishbone: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,fishbone);
-                    delete fishbone;
-                    mon_d[2] = 1;
+                    battle_result = inbattle(player1,fishbone);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete fishbone;
+                        mon_d[2] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete fishbone;
+                        alive_array[2] = 1;
+                        mon_d[2] = 1;
+                    }
                 }
                 else if (monem == 4 && mon_d[3] == 0){
-                    printw("Monster encountered is Flameboi: %d",monem);
+                    printw("Monster encountered is flameboi: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,flameboi);
-                    delete flameboi;
-                    mon_d[3] = 1;
+                    battle_result = inbattle(player1,flameboi);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete flameboi;
+                        mon_d[3] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete flameboi;
+                        alive_array[3] = 1;
+                        mon_d[3] = 1;
+                    }
                 }
                 else if (monem == 5 && mon_d[4] == 0){
-                    printw("Monster encountered is Bigstone: %d",monem);
+                    printw("Monster encountered is bigstone: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,bigstone);
-                    delete bigstone;
-                    mon_d[4] = 1;
+                    battle_result = inbattle(player1,bigstone);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete bigstone;
+                        mon_d[4] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete bigstone;
+                        alive_array[4] = 1;
+                        mon_d[4] = 1;
+                    }
                 }
                 else if (monem == 6 && mon_d[5] == 0){
-                    printw("Monster encountered is Doggo: %d",monem);
+                    printw("Monster encountered is doggo: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,doggo);
-                    delete doggo;
-                    mon_d[5] = 1;
+                    battle_result = inbattle(player1,doggo);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete doggo;
+                        mon_d[5] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete doggo;
+                        alive_array[5] = 1;
+                        mon_d[5] = 1;
+                    }
                 }
                 else if (monem == 7 && mon_d[6] == 0){
-                    printw("Monster encountered is Shoemaker: %d",monem);
+                    printw("Monster encountered is shoemaker: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,shoemaker);
-                    delete shoemaker;
-                    mon_d[6] = 1;
+                    battle_result = inbattle(player1,shoemaker);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete shoemaker;
+                        mon_d[6] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete shoemaker;
+                        alive_array[6] = 1;
+                        mon_d[6] = 1;
+                    }
                 }
                 else if (monem == 8 && mon_d[7] == 0){
-                    printw("Monster encountered is Iceboi: %d",monem);
+                    printw("Monster encountered is iceboi: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,iceboi);
-                    delete iceboi;
-                    mon_d[7] = 1;
+                    battle_result = inbattle(player1,iceboi);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete iceboi;
+                        mon_d[7] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete iceboi;
+                        alive_array[7] = 1;
+                        mon_d[7] = 1;
+                    }
                 }
                 else if (monem == 9 && mon_d[8] == 0){
-                    printw("Monster encountered is Birdman: %d",monem);
+                    printw("Monster encountered is birdman: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,birdman);
-                    delete birdman;
-                    mon_d[8] = 1;
+                    battle_result = inbattle(player1,birdman);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete birdman;
+                        mon_d[8] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete birdman;
+                        alive_array[8] = 1;
+                        mon_d[8] = 1;
+                    }
                 }
                 else if (monem == 10 && mon_d[9] == 0){
-                    printw("Monster encountered is Bruce: %d",monem);
+                    printw("Monster encountered is bruce: %d",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
-                    inbattle(player1,bruce);
-                    delete bruce;
-                    mon_d[9] = 1;
+                    battle_result = inbattle(player1,bruce);
+                    if (battle_result == 0){
+                        xpos = 29;
+                        ypos = 0;
+                        printmap(map,xpos,ypos);
+                        continue;
+                    }
+                    else if (battle_result == 1){
+                        delete bruce;
+                        mon_d[9] = 1;
+                    }
+                    else if (battle_result == 2){
+                        delete bruce;
+                        alive_array[9] = 1;
+                        mon_d[9] = 1;
+                    }
                 }
                 printw("\n");
 
