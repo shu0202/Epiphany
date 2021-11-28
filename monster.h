@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string>
+#ifndef MY_STRUCT
+#define MY_STRUCT
 
 struct monster{
     int no;
@@ -9,4 +9,13 @@ struct monster{
     char talk[200];
     // Every monster has equal crit chance of 0.1;
 };
+
+struct player{
+    int hp;
+    int atk;
+    int crit_chance;
+    char name[30];
+};
+
+#endif
 

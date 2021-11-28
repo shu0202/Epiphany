@@ -6,9 +6,86 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
-#include "newgame.h"
 #include "monster.h"
+#include "newgame.h"
 using namespace std;
+
+
+void print_choice(int choice){
+    clear();
+    if (choice == 1){
+        printw("Please choose one of the powerups below:\n");
+        printw("Sword    <--\n");
+        printw("Potion\n");
+        printw("Gun\n");
+        refresh();
+    }
+    else if (choice == 2){
+        printw("Please choose one of the powerups below:\n");
+        printw("Sword\n");
+        printw("Potion   <--\n");
+        printw("Gun\n");
+        refresh();
+    }
+    else if (choice == 3){
+        printw("Please choose one of the powerups below:\n");
+        printw("Sword\n");
+        printw("Potion\n");
+        printw("Gun      <--\n");
+        refresh();
+    }
+    return;
+}
+
+int cave_op(player &player){
+    int ch;
+    int choice = 1;
+    clear();
+    ch = 0;
+    print_choice(choice);
+    while (ch!=10){
+        if (ch == 259){
+            choice = choice - 1;
+            if (choice < 1){
+                choice = choice + 3;
+            }
+            print_choice(choice);
+        }
+        else if (ch == 258){
+            choice = choice + 1;
+            if (choice > 3){
+                choice = choice - 3;
+            }
+            print_choice(choice);
+        }
+        else if (ch == 261){
+            choice = 3;
+            print_choice(choice);
+        }
+        else if (ch == 260){
+            choice = 1;
+            print_choice(choice);
+        }
+        ch = getch();
+    }
+    if (choice == 1){
+        printw("Your choice is a sword, your attack has increased by 50\nPress any key to go back to map.");
+        player.atk = player.atk + 50;
+        getch();
+    }
+    else if(choice == 2){
+        printw("Your choice is a potion, your hp has been restored\nPress any key to go back to map.");
+        player.hp = 200;
+        getch();
+    }
+    else if(choice == 3){
+        printw("Your choice is a gun, your critical chance has increased\nPress any key to go back to map.");
+        player.crit_chance = 50;
+        getch();
+    }
+    return 1;
+}
+
 void newgame(){
     clear();
     int xpos = 29;
@@ -21,13 +98,17 @@ void newgame(){
     for (int i=1; i<11; i++){
         monlist.push_back(i);
     }
-    // get player name
+    // get player name and initiallise player stats
+    player player1;
     printw("What is ur name?\n");
     refresh();
-    getstr(name);
+    getstr(player1.name);
     refresh();
-    printw("Hello %s, welcome to epithany\n",name);
+    printw("Hello %s, welcome to epithany\n",player1.name);
     refresh();
+    player1.atk = 50;
+    player1.hp = 200;
+    player1.crit_chance = 10;
     printw("Storytelling\n");
     refresh();
     printw("Press any key to continue");
@@ -111,7 +192,9 @@ void newgame(){
     make_prop(map);
     
     int mon_d[10] = {0};
+    int mon_a[10] = {0};
     int s=0;
+    int cave = 0;
 
     print_map(map,xpos,ypos);
     while (true){
@@ -132,6 +215,10 @@ void newgame(){
                     f = 1;
                 }
             }
+            if (((xpos == 3 and ypos == 25) or (xpos == 4 and ypos == 25) or (xpos == 4 and ypos == 26))and cave == 0){
+                cave = cave_op(player1);
+                f = 1;
+            }
             print_map(map,xpos,ypos);
         }
         else if (ch == 258){
@@ -148,6 +235,10 @@ void newgame(){
                     ypos = ypos - 1;
                     f = 1;
                 }
+            }
+            if (((xpos == 3 and ypos == 25) or (xpos == 4 and ypos == 25) or (xpos == 4 and ypos == 26))and cave == 0){
+                cave = cave_op(player1);
+                f = 1;
             }
             print_map(map,xpos,ypos);
         }
@@ -166,6 +257,10 @@ void newgame(){
                     f = 1;
                 }
             }
+            if (((xpos == 3 and ypos == 25) or (xpos == 4 and ypos == 25) or (xpos == 4 and ypos == 26))and cave == 0){
+                cave = cave_op(player1);
+                f = 1;
+            }
             print_map(map,xpos,ypos);
         }
         else if (ch == 260){
@@ -183,9 +278,13 @@ void newgame(){
                     f = 1;
                 }
             }
+            if (((xpos == 3 and ypos == 25) or (xpos == 4 and ypos == 25) or (xpos == 4 and ypos == 26))and cave == 0){
+                cave = cave_op(player1);
+                f = 1;
+            }
             print_map(map,xpos,ypos);
         }
-        if (f == 0 and monlist.size() != 0){
+        if (f == 0 and monlist.size() != 0 and s!= 0){
             srand((unsigned) time(0));
             int monchance;
             int monen;
@@ -277,6 +376,7 @@ void newgame(){
 
             }
         }
+        s=1;
         printw("pos : %d, %d\n",xpos, ypos);
         ch = getch();
         
