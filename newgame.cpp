@@ -381,6 +381,7 @@ void newgame(){
                         mon_d[2] = 1;
                     }
                 }
+                
                 else if (monem == 4 && mon_d[3] == 0){
                     printw("Monster encountered is flameboi: %d",monem);
                     printw("Press any key to enter battle\n");
@@ -403,6 +404,7 @@ void newgame(){
                         mon_d[3] = 1;
                     }
                 }
+                
                 else if (monem == 5 && mon_d[4] == 0){
                     printw("Monster encountered is bigstone: %d",monem);
                     printw("Press any key to enter battle\n");
