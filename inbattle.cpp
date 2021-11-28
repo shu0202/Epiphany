@@ -51,6 +51,7 @@ int inbattle(player_stat *player, monster *mon){
                     printw("Attack missed\n");
                     k += 1;
                     printw("(Press any key to proceed to next turn...)\n");
+                    refresh();
                     getch();
                     continue;
                 }
@@ -58,10 +59,12 @@ int inbattle(player_stat *player, monster *mon){
                     if (critchance <= 0.1){
                         printw("It's a critical hit!\n");
                         printw("%s got hit by %d\n", mon->name, (player->atk)*2);
+                        refresh();
                         mon->hp -= (player->atk)*2;
                     }
                     else{
                         printw("%s got hit by %d\n", mon->name, player->atk);
+                        refresh();
                         mon->hp -= player->atk;
                     }
                 }
@@ -71,6 +74,7 @@ int inbattle(player_stat *player, monster *mon){
                 printw("%s: %s\n", mon->name, mon->talk);
                 printw("You spared %s...\n", mon->name);
                 printw("(Press any key to leave...)\n");
+                refresh();
                 getch();
                 return 2;
             }
@@ -79,10 +83,12 @@ int inbattle(player_stat *player, monster *mon){
         else{
             clear();
             printw("Opponent's turn:\n");
+            refresh();
             if (misschance <= 0.1){
                 printw("Attack missed\n");
                 k += 1;
                 printw("(Press any key to proceed to next turn...)\n");
+                refresh();
                 getch();
                 continue;
             }
@@ -90,10 +96,12 @@ int inbattle(player_stat *player, monster *mon){
                 if (critchance <= 0.1){
                         printw("It's a critical hit!\n");
                         printw("%s got hit by %d\n", player->name, (mon->atk)*2);
+                        refresh();
                         player->hp -= (mon->atk)*2;
                     }
                     else{
                         printw("%s got hit by %d\n", player->name, mon->atk);
+                        refresh();
                         player->hp -= mon->atk;
                     }
             }
@@ -101,6 +109,7 @@ int inbattle(player_stat *player, monster *mon){
         if (player->hp <= 0){
             printw("You fainted...\n");
             printw("(Press any key to respawn...)\n");
+            refresh();
             getch();
             return 0;
         }
@@ -108,11 +117,13 @@ int inbattle(player_stat *player, monster *mon){
             printw("%s: %s\n", mon->name, mon->dead);
             printw("You killed %s...\n", mon->name);
             printw("(Press any key to leave...)\n");
+            refresh();
             getch();
             return 1;
         }
         k += 1;
         printw("(Press any key to proceed to next turn...)\n");
+        refresh();
         getch();  
     }
 }
