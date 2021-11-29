@@ -9,6 +9,7 @@
 #include "monster.h"
 #include "newgame.h"
 #include "savegame.h"
+#include "tower.h"
 using namespace std;
 
 
@@ -118,6 +119,14 @@ void newgame(){
     clear();
 
     //decleare monsters
+    monster* lester = new monster;
+    strcpy(lester->name, "Lester the King");
+    lester->no = 11;
+    lester->hp = 300;
+    lester->atk = 100;
+    strcpy(lester->dead, "You kill one me, there's still a thousand of me");
+    strcpy(lester->talk, "You are a true worthy soul.");
+
     monster* flower = new monster;
     strcpy(flower->name, "Flower");
     flower->no = 1;
@@ -230,6 +239,22 @@ void newgame(){
                 cave = cave_op(player1);
                 f = 1;
             }
+            if (xpos == 5 and ypos == 5){
+                tower(10,0,monlist,alive_array);
+                battle_result = inbattle(player1,lester);
+                if (battle_result == 0){
+                    xpos = 29;
+                    ypos = 0;
+                    player1->hp = 200;
+                    print_map(map,xpos,ypos);
+                    ch=getch();
+                    continue;
+                }
+                else{
+                    tower(battle_result,1,monlist,alive_array);
+                }
+                break;
+            }
             print_map(map,xpos,ypos);
         }
         else if (ch == 258){
@@ -250,6 +275,22 @@ void newgame(){
             if (((xpos == 3 and ypos == 25) or (xpos == 4 and ypos == 25) or (xpos == 4 and ypos == 26))and cave == 0){
                 cave = cave_op(player1);
                 f = 1;
+            }
+            if (xpos == 5 and ypos == 5){
+                tower(10,0,monlist,alive_array);
+                battle_result = inbattle(player1,lester);
+                if (battle_result == 0){
+                    xpos = 29;
+                    ypos = 0;
+                    player1->hp = 200;
+                    print_map(map,xpos,ypos);
+                    ch=getch();
+                    continue;
+                }
+                else{
+                    tower(battle_result,1,monlist,alive_array);
+                }
+                break;
             }
             print_map(map,xpos,ypos);
         }
@@ -272,6 +313,22 @@ void newgame(){
                 cave = cave_op(player1);
                 f = 1;
             }
+            if (xpos == 5 and ypos == 5){
+                tower(10,0,monlist,alive_array);
+                battle_result = inbattle(player1,lester);
+                if (battle_result == 0){
+                    xpos = 29;
+                    ypos = 0;
+                    player1->hp = 200;
+                    print_map(map,xpos,ypos);
+                    ch=getch();
+                    continue;
+                }
+                else{
+                    tower(battle_result,1,monlist,alive_array);
+                }
+                break;
+            }
             print_map(map,xpos,ypos);
         }
         else if (ch == 260){
@@ -292,6 +349,22 @@ void newgame(){
             if (((xpos == 3 and ypos == 25) or (xpos == 4 and ypos == 25) or (xpos == 4 and ypos == 26))and cave == 0){
                 cave = cave_op(player1);
                 f = 1;
+            }
+            if (xpos == 5 and ypos == 5){
+                tower(10,0,monlist,alive_array);
+                battle_result = inbattle(player1,lester);
+                if (battle_result == 0){
+                    xpos = 29;
+                    ypos = 0;
+                    player1->hp = 200;
+                    print_map(map,xpos,ypos);
+                    ch=getch();
+                    continue;
+                }
+                else{
+                    tower(battle_result,1,monlist,alive_array);
+                }
+                break;
             }
             print_map(map,xpos,ypos);
         }
@@ -346,7 +419,7 @@ void newgame(){
                 }
                 
                 else if (monem == 2 && mon_d[1] == 0){
-                    printw("Monster encountered is robot: %d",monem);
+                    printw("Monster encountered is robot: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -372,7 +445,7 @@ void newgame(){
                 }
                 
                 else if (monem == 3 && mon_d[2] == 0){
-                    printw("Monster encountered is fishbone: %d",monem);
+                    printw("Monster encountered is fishbone: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -398,7 +471,7 @@ void newgame(){
                 }
                 
                 else if (monem == 4 && mon_d[3] == 0){
-                    printw("Monster encountered is flameboi: %d",monem);
+                    printw("Monster encountered is flameboi: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -424,7 +497,7 @@ void newgame(){
                 }
                 
                 else if (monem == 5 && mon_d[4] == 0){
-                    printw("Monster encountered is bigstone: %d",monem);
+                    printw("Monster encountered is bigstone: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -450,7 +523,7 @@ void newgame(){
                 }
                 
                 else if (monem == 6 && mon_d[5] == 0){
-                    printw("Monster encountered is doggo: %d",monem);
+                    printw("Monster encountered is doggo: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -476,7 +549,7 @@ void newgame(){
                 }
                 
                 else if (monem == 7 && mon_d[6] == 0){
-                    printw("Monster encountered is shoemaker: %d",monem);
+                    printw("Monster encountered is shoemaker: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -502,7 +575,7 @@ void newgame(){
                 }
                 
                 else if (monem == 8 && mon_d[7] == 0){
-                    printw("Monster encountered is iceboi: %d",monem);
+                    printw("Monster encountered is iceboi: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -528,7 +601,7 @@ void newgame(){
                 }
                 
                 else if (monem == 9 && mon_d[8] == 0){
-                    printw("Monster encountered is birdman: %d",monem);
+                    printw("Monster encountered is birdman: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -554,7 +627,7 @@ void newgame(){
                 }
                 
                 else if (monem == 10 && mon_d[9] == 0){
-                    printw("Monster encountered is bruce: %d",monem);
+                    printw("Monster encountered is bruce: %d\n",monem);
                     printw("Press any key to enter battle\n");
                     refresh();
                     getch();
@@ -583,10 +656,9 @@ void newgame(){
             }
         }
         s=1;
-        printw("pos : %d, %d\n",xpos, ypos);
+        //printw("pos : %d, %d\n",xpos, ypos);
         ch = getch();
         
     }
-    getch();
     return;
 }

@@ -2,7 +2,7 @@
 #define MY_STRUCT
 
 struct monster{
-    char name[10];
+    char name[20];
     int no;
     int hp;
     int atk;
