@@ -8,6 +8,7 @@
 #include <vector>
 #include "monster.h"
 #include "newgame.h"
+#include "savegame.h"
 using namespace std;
 
 
@@ -294,6 +295,10 @@ void newgame(){
             }
             print_map(map,xpos,ypos);
         }
+        else if (ch == 80 or ch == 112){
+            savegame(player1,monlist,xpos,ypos);
+            break;
+        }
 
         if (f == 0 and monlist.size() != 0 and s!= 0){
             srand(time(NULL));
@@ -324,6 +329,7 @@ void newgame(){
                         ypos = 0;
                         player1->hp = 200;
                         print_map(map,xpos,ypos);
+                        ch=getch();
                         continue;
                     }
                     else if (battle_result == 1){

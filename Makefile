@@ -14,12 +14,15 @@ print_battle_menu.o: print_battle_menu.cpp newgame.h monster.h print_battle.h
 inbattle.o: inbattle.cpp monster.h print_battle.h
 	g++ -c inbattle.cpp
 
-newgame.o: newgame.cpp newgame.h monster.h inbattle.o print_map.o
+savegame.o: savegame.cpp savegame.h monster.h
+	g++ -c savegame.cpp
+
+newgame.o: newgame.cpp newgame.h monster.h inbattle.o print_map.o savegame.h
 	g++ -c newgame.cpp
 
 main.o: main.cpp main.h
 	g++ -c main.cpp
 
-main: main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o
-	g++ main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o -lncurses -o main
+main: main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o savegame.o
+	g++ main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o savegame.o -lncurses -o main
 
