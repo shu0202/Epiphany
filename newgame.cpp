@@ -82,7 +82,7 @@ int cave_op(player_stat *player){
     }
     else if(choice == 3){
         printw("Your choice is a gun, your critical chance has increased\nPress any key to go back to map.");
-        player->crit_chance = 50;
+        player->crit_chance = 0.5;
         getch();
     }
     return 1;
@@ -369,7 +369,7 @@ void newgame(){
             print_map(map,xpos,ypos);
         }
         else if (ch == 80 or ch == 112){
-            savegame(player1,monlist,xpos,ypos);
+            savegame(player1,monlist,xpos,ypos,alive_array);
             break;
         }
 
