@@ -296,14 +296,14 @@ void newgame(){
         }
 
         if (f == 0 and monlist.size() != 0 and s!= 0){
-            srand((unsigned) time(0));
+            srand(time(NULL));
             int monchance;
             int monen;
             int monem;
             monchance = (rand() % 100) + 1;
             //printw("mon chance: %d\n",monchance);
             refresh();
-            if (monchance < 31){
+            if (monchance < 21){
                 // delete monster
                 monen = (rand() % mon_acc) + 1;
                 mon_acc = mon_acc - 1;
@@ -322,17 +322,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete flower;
                         mon_d[0] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete flower;
                         alive_array[0] = 1;
                         mon_d[0] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -345,17 +348,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete robot;
                         mon_d[1] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete robot;
                         alive_array[1] = 1;
                         mon_d[1] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -368,17 +374,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete fishbone;
                         mon_d[2] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete fishbone;
                         alive_array[2] = 1;
                         mon_d[2] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -391,17 +400,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete flameboi;
                         mon_d[3] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete flameboi;
                         alive_array[3] = 1;
                         mon_d[3] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -414,17 +426,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete bigstone;
                         mon_d[4] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete bigstone;
                         alive_array[4] = 1;
                         mon_d[4] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -437,17 +452,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete doggo;
                         mon_d[5] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete doggo;
                         alive_array[5] = 1;
                         mon_d[5] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -460,17 +478,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete shoemaker;
                         mon_d[6] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete shoemaker;
                         alive_array[6] = 1;
                         mon_d[6] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -483,17 +504,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete iceboi;
                         mon_d[7] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete iceboi;
                         alive_array[7] = 1;
                         mon_d[7] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -506,17 +530,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete birdman;
                         mon_d[8] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete birdman;
                         alive_array[8] = 1;
                         mon_d[8] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 
@@ -529,17 +556,20 @@ void newgame(){
                     if (battle_result == 0){
                         xpos = 29;
                         ypos = 0;
-                        printmap(map,xpos,ypos);
+                        player1->hp = 200;
+                        print_map(map,xpos,ypos);
                         continue;
                     }
                     else if (battle_result == 1){
                         delete bruce;
                         mon_d[9] = 1;
+                        print_map(map,xpos,ypos);
                     }
                     else if (battle_result == 2){
                         delete bruce;
                         alive_array[9] = 1;
                         mon_d[9] = 1;
+                        print_map(map,xpos,ypos);
                     }
                 }
                 printw("\n");
