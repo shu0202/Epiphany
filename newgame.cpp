@@ -9,6 +9,7 @@
 #include "monster.h"
 #include "newgame.h"
 #include "savegame.h"
+#include "loadgame.h"
 #include "tower.h"
 using namespace std;
 
@@ -88,36 +89,15 @@ int cave_op(player_stat *player){
     return 1;
 }
 
-void newgame(){
+void newgame(int gstatus){
     clear();
     int alive_array[10] = {0};
     int xpos = 29;
     int ypos = 0;
     int mon_acc = 10;
     vector <int> monlist;
-    char name[30];
-    int ch;
-    echo();
-    for (int i=1; i<11; i++){
-        monlist.push_back(i);
-    }
-    // get player name and initiallise player stats
     player_stat* player1 = new player_stat;
-    printw("What is ur name?\n");
-    refresh();
-    getstr(player1->name);
-    refresh();
-    printw("Hello %s, welcome to epithany\n",player1->name);
-    refresh();
-    player1->atk = 50;
-    player1->hp = 200;
-    player1->crit_chance = 0.1;
-    printw("Storytelling\n");
-    refresh();
-    printw("Press any key to continue");
-    getch();
-    clear();
-
+    
     //decleare monsters
     monster* lester = new monster;
     strcpy(lester->name, "Lester the King");
@@ -206,7 +186,37 @@ void newgame(){
     bruce->atk = 100;
     strcpy(bruce->dead, "Be water my friend.");
     strcpy(bruce->talk, "I will teach you zhe quan dao!");
-
+    
+    // load the game from saved file
+    if (gstatus == 0){
+        loadgame(player1, monlist, xpos, ypos, alive_array);
+    }
+    
+    // start new game with no saved file
+    else if (gstatus == 1){
+        char name[30];
+        int ch;
+        echo();
+        for (int i=1; i<11; i++){
+            monlist.push_back(i);
+        }
+        // get player name and initiallise player stats
+        printw("What is ur name?\n");
+        refresh();
+        getstr(player1->name);
+        refresh();
+        printw("Hello %s, welcome to epithany\n",player1->name);
+        refresh();
+        player1->atk = 50;
+        player1->hp = 200;
+        player1->crit_chance = 0.1;
+        printw("Storytelling\n");
+        refresh();
+        printw("Press any key to continue");
+        getch();
+        clear();
+    }
+    
     //adventure in map
 
     char map[30][30];
