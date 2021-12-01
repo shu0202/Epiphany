@@ -10,6 +10,7 @@ int main(){
     int ch;
     int choice = 1;
     int ex = 0;
+    int gstatus;
     initscr();
     raw();
     keypad(stdscr, TRUE);
@@ -45,12 +46,14 @@ int main(){
     switch(choice){
         case 1:
             //printw("NewGame");
-            newgame();          //enter new game
+            gstatus = 1;
+            newgame(gstatus);          //enter new game
             endwin();
             break;
         case 2:
-            printw("LoadGame");
-            getch();
+            //printw("LoadGame");
+            gstatus = 0;
+            newgame(gstatus);          //load game
             endwin();
             break;
             //loadgame();
