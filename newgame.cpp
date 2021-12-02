@@ -191,7 +191,20 @@ void newgame(int gstatus){
     // load the game from saved file
     if (gstatus == 0){
         loadgame(player1, monlist, xpos, ypos, alive_array);
+            clear();
+        printw("monlist: ");
+        refresh();
+        for (int i=0;i<monlist.size();i++){
+            printw("%d ",monlist[i]);
+            refresh();
+        }
+        getch();
+        clear();
+
     }
+
+
+
     
     // start new game with no saved file
     else if (gstatus == 1){
