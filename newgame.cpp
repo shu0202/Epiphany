@@ -219,8 +219,8 @@ void newgame(int gstatus){
         player1->atk = 50;
         player1->hp = 200;
         player1->crit_chance = 0.1;
-        printw("Storytelling\n");
-        refresh();
+        //printw("Storytelling\n");
+        //refresh();
         printw("Press any key to continue");
         getch();
         clear();
