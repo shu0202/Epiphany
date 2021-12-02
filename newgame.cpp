@@ -96,6 +96,7 @@ void newgame(int gstatus){
     int ypos = 0;
     int mon_acc = 10;
     int ch;
+    int cave = 0;
     vector <int> monlist;
     player_stat* player1 = new player_stat;
     
@@ -190,7 +191,7 @@ void newgame(int gstatus){
     
     // load the game from saved file
     if (gstatus == 0){
-        loadgame(player1, monlist, xpos, ypos, alive_array);
+        loadgame(player1, monlist, xpos, ypos, cave, alive_array);
 
     }
 
@@ -229,7 +230,6 @@ void newgame(int gstatus){
     
     int mon_d[10] = {0};
     int s=0;
-    int cave = 0;
     print_map(map,xpos,ypos);
     ch = getch();
     while (true){
@@ -384,7 +384,7 @@ void newgame(int gstatus){
             print_map(map,xpos,ypos);
         }
         else if (ch == 80 or ch == 112){
-            savegame(player1,monlist,xpos,ypos,alive_array);
+            savegame(player1,monlist,xpos,ypos,cave,alive_array);
             break;
         }
 
