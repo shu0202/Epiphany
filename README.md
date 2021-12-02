@@ -44,3 +44,13 @@ There will be a main menu where the player can choose game modes (start, continu
    - Program codes for main menu (game lobby), off-battle (walking in the map) and in-battle (monster encounter) 
      are separated in different files.
 
+### Non-standard C/C++ libraries:
+   - ncurses.h is used in the game.
+   - 
+
+### Compilation and execution instructions:
+   1. run initial.sh in the terminal
+      - This allows the relevant functions in the non standard library ncurses.h to be used in the game
+   2. make main in the terminal
+      - This is to generate the target main
+   3. ./main in the terminal and start playing the game.
