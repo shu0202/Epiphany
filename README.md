@@ -15,7 +15,7 @@ This game is a single player role-playing game inspired by the 2015 game 'Undert
 Game rule: There is one map in the game. In the map, the player has to reach the castle in the top left part for a boss encounter by moving up, down, left, right. On his way, there are random monster encounters. If the player's hp goes down to zero at any point of the game, he is respawn at the spawnpoint, the top right corner on the map. The goal of the player is to get to defeat the boss.
 
 ### Features:
-There will be a main menu where the player can choose game modes (start, continue, etc.) When the game starts the player can type their name and they will use this name throughout the gaming process. There is one 30x30 map that the users can explore. When the user is walking in the map, there are predefined chances for player to encounter a monster. A turn-based combat system will be implemented during the encounter. The game will feature player status (hp, atk, critical chance) just like other RPG games. After the encounter the data of the monsters will be erased if the monster is killed or spared. The player can quit the game anytime when he is no in a battle by choosing save in the option menu. 
+There will be a main menu where the player can choose game modes (start, continue, etc.) When the game starts the player can type their name and they will use this name throughout the gaming process. There is one 30x30 map that the users can explore. When the user is walking in the map, there are predefined chances for player to encounter a monster. A turn-based combat system will be implemented during the encounter. The game will feature player status (hp, atk, crit_chance) just like other RPG games. After the encounter the data of the monsters will be erased if the monster is killed or spared. The player can quit the game anytime when he is no in a battle by choosing save in the option menu. 
 
 ### Coding requiements:
 1. Generation of random game sets or events
@@ -34,7 +34,7 @@ There will be a main menu where the player can choose game modes (start, continu
    - After each encounter, the data of the opponents is erased from the program to confine memory usage.
 4. File input/output (e.g., for loading/saving game status)
    - The game status is saved in a text file. The text file contains below:
-   - Name of player, hp of player, atk of player, critical chance of player.
+   - Name of player, hp of player, atk of player, crit_chance of player.
    - The x and y position where the player is at. 
    - Whether the player has entered the cave before
    - Number of monsters remaining.
