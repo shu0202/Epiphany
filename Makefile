@@ -20,12 +20,15 @@ savegame.o: savegame.cpp savegame.h monster.h
 tower.o: tower.cpp tower.h
 	g++ -c tower.cpp
 
-newgame.o: newgame.cpp newgame.h monster.h inbattle.o print_map.o savegame.h tower.h
+loadgame.o: loadgame.cpp loadgame.h monster.h
+	g++ -c loadgame.cpp
+
+newgame.o: newgame.cpp newgame.h monster.h inbattle.o print_map.o savegame.h tower.h loadgame.h
 	g++ -c newgame.cpp
 
-main.o: main.cpp main.h
+main.o: main.cpp main.h loadgame.h
 	g++ -c main.cpp
 
-main: main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o savegame.o tower.o
-	g++ main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o savegame.o tower.o -lncurses -o main
+main: main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o savegame.o tower.o loadgame.o
+	g++ main.o print_menu.o newgame.o print_map.o map.o print_battle_menu.o inbattle.o savegame.o tower.o loadgame.o -lncurses -o main
 

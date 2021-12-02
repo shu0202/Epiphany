@@ -95,6 +95,7 @@ void newgame(int gstatus){
     int xpos = 29;
     int ypos = 0;
     int mon_acc = 10;
+    int ch;
     vector <int> monlist;
     player_stat* player1 = new player_stat;
     
@@ -225,8 +226,8 @@ void newgame(int gstatus){
     int mon_d[10] = {0};
     int s=0;
     int cave = 0;
-
     print_map(map,xpos,ypos);
+    ch = getch();
     while (true){
         int f = 0;
         int battle_result;

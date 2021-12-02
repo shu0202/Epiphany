@@ -44,7 +44,7 @@ void tower(int result, int flag, vector<int> monlist, int alive[10]){
             printw("You've killed the king.\n");
             refresh();
             getch();
-            printw("However, the king has sent his soilders to kill your family\n");
+            printw("However, the king has sent his soilders to kill your family.\n");
             refresh();
             getch();
 

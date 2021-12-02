@@ -4,6 +4,6 @@
 #define MAIN_H
 
 void print_menu(int choice);
-void newgame();
+void newgame(int gstatus);
 
 #endif
