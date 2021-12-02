@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <string>
+#include <string.h>
 #include <ncurses.h>
 #include <stdlib.h>
 #include <cstdlib>
