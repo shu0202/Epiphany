@@ -7,7 +7,7 @@
 #include "loadgame.h"
 using namespace std;
 
-int loadgame(player_stat *player, vector<int> &monlist, int &xpos, int &ypos, int alive[10]){
+int loadgame(player_stat *player, vector<int> &monlist, int &xpos, int &ypos, int &cave, int alive[10]){
     //read the saved file and load it into the current game
     clear();
     int j;
@@ -24,6 +24,7 @@ int loadgame(player_stat *player, vector<int> &monlist, int &xpos, int &ypos, in
     fin >> player->atk;
     fin >> player->crit_chance;
     fin >> xpos >> ypos;
+    fin >> cave;
     fin >> monlist_size;
     for (int k = 0; k < monlist_size; k++){
         fin >> j;
