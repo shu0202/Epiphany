@@ -74,6 +74,8 @@ int inbattle(player_stat *player, monster *mon){
             //player chose talk
             else if (battlechoice == 1){
                 printw("%s: %s\n", mon->name, mon->talk);
+                if (mon->name = "Lester the King")
+                    continue;
                 printw("You spared %s...\n", mon->name);
                 printw("(Press any key to leave...)\n");
                 refresh();
