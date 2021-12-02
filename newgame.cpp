@@ -199,6 +199,7 @@ void newgame(int gstatus){
 
     
     // start new game with no saved file
+    
     else if (gstatus == 1){
         char name[30];
         int ch;
@@ -206,6 +207,8 @@ void newgame(int gstatus){
         for (int i=1; i<11; i++){
             monlist.push_back(i);
         }
+        //story
+        printw("You felt a strong light shining through your eyes and woke...\nYou glanced around, only to find that you are in a strange forest.\n \'I gotta go home\', you told youerself.\n\'Whatever it takes...\'\n\n");
         // get player name and initiallise player stats
         printw("What is ur name?\n");
         refresh();
