@@ -6,7 +6,7 @@
 #include "savegame.h"
 using namespace std;
 
-int savegame(player_stat *player, vector<int> monlist, int xpos, int ypos, int alive[10]){
+int savegame(player_stat *player, vector<int> monlist, int xpos, int ypos, int cave, int alive[10]){
     clear();
     int ch;
     int choice = 1;
@@ -56,6 +56,7 @@ int savegame(player_stat *player, vector<int> monlist, int xpos, int ypos, int a
         outputf << player->atk << endl;
         outputf << player->crit_chance << endl;
         outputf << xpos << " " << ypos << endl;
+        outputf << cave << endl;
         outputf << monlist.size() << endl;
         for (int i=0;i<monlist.size();i++){
             outputf << monlist[i] << endl;
