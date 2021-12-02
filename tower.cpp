@@ -39,7 +39,7 @@ void tower(int result, int flag, vector<int> monlist, int alive[10]){
         }
     }
     if (flag == 1){
-        if (result == 1){
+        if ((monlist.size()+count) > 5){
             clear();
             printw("You've killed the king.\n");
             refresh();
@@ -49,7 +49,7 @@ void tower(int result, int flag, vector<int> monlist, int alive[10]){
             getch();
 
         }
-        else if(result == 2){
+        else if((monlist.size()+count) <= 5){
             clear();
             printw("You are a true worthy person!!!\n");
             refresh();
