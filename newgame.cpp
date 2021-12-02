@@ -105,7 +105,7 @@ void newgame(int gstatus){
     lester->hp = 300;
     lester->atk = 100;
     strcpy(lester->dead, "You kill one me, there's still a thousand of me");
-    strcpy(lester->talk, "You are a true worthy soul.");
+    strcpy(lester->talk, "Men communicate with fists and sweats");
 
     monster* flower = new monster;
     strcpy(flower->name, "Flower");
