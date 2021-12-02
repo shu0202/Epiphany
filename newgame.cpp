@@ -210,7 +210,7 @@ void newgame(int gstatus){
         //story
         printw("You felt a strong light shining through your eyes and woke...\nYou glanced around, only to find that you are in a strange forest.\n \'I gotta go home\', you told youerself.\n\'Whatever it takes...\'\n\n");
         // get player name and initiallise player stats
-        printw("What is ur name?\n");
+        printw("What is your name?\n");
         refresh();
         getstr(player1->name);
         refresh();
@@ -219,8 +219,7 @@ void newgame(int gstatus){
         player1->atk = 50;
         player1->hp = 200;
         player1->crit_chance = 0.1;
-        //printw("Storytelling\n");
-        //refresh();
+        refresh();
         printw("Press any key to continue");
         getch();
         clear();
