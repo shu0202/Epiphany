@@ -73,7 +73,7 @@ int cave_op(player_stat *player){
     }
     if (choice == 1){
         printw("Your choice is a sword, your attack has increased by 50\nPress any key to go back to map.");
-        player->atk = player->atk + 50;
+        player->atk = player->atk + 30;
         getch();
     }
     else if(choice == 2){
