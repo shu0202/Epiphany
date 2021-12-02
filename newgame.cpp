@@ -191,15 +191,6 @@ void newgame(int gstatus){
     // load the game from saved file
     if (gstatus == 0){
         loadgame(player1, monlist, xpos, ypos, alive_array);
-            clear();
-        printw("monlist: ");
-        refresh();
-        for (int i=0;i<monlist.size();i++){
-            printw("%d ",monlist[i]);
-            refresh();
-        }
-        getch();
-        clear();
 
     }
 
@@ -405,7 +396,7 @@ void newgame(int gstatus){
             monchance = (rand() % 100) + 1;
             //printw("mon chance: %d\n",monchance);
             refresh();
-            if (monchance < 21){
+            if (monchance < 51){
                 // delete monster
                 monen = (rand() % mon_acc) + 1;
                 mon_acc = mon_acc - 1;
