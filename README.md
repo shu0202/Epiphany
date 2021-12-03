@@ -54,8 +54,9 @@ There will be a main menu where the player can choose game modes (start, continu
    - endwin() is used when existing main.cpp, i.e. terminating the game.
 
 ### Compilation and execution instructions:
-   1. run initial.sh in the terminal
+   1. run the command chmod u+x initial.sh in the terminal
+   2. run initial.sh in the terminal
       - This allows the relevant functions in the non standard library ncurses.h to be used in the game
-   2. make main in the terminal
+   3. make main in the terminal
       - This is to generate the target main
-   3. ./main in the terminal and start playing the game.
+   4. ./main in the terminal and start playing the game.
