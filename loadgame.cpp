@@ -16,7 +16,7 @@ int loadgame(player_stat *player, vector<int> &monlist, int &xpos, int &ypos, in
     ifstream fin;
     fin.open(filename);
     if (fin.fail()){
-        cout << "Save file missing" << endl;
+        printw("Save file missing\n");
         exit(1);
     }
     fin >> player->name;
