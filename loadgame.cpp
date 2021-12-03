@@ -17,6 +17,9 @@ int loadgame(player_stat *player, vector<int> &monlist, int &xpos, int &ypos, in
     fin.open(filename);
     if (fin.fail()){
         printw("Save file missing\n");
+        refresh();
+        getch();
+        endwin();
         exit(1);
     }
     fin >> player->name;
