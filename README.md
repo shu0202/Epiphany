@@ -26,9 +26,9 @@ There will be a main menu where the player can choose game modes (start, continu
    - The status of the player is stored in a struct called player_stat.
    - The hp of the player is stored in an integer variable called hp in the struct.
    - The attack damage that the player can be dealt is stored in an integer variable called atk in the struct.
-   - The crit chance of the player can be stored in an integer variable called crit in the struct.
-   - The name of the player is stored in a string array called name in the struct.
-   - There is a struct called monster with int variable no, hp and atk. The struct will have two string array called dead and talked which store the text to say when being defeated and talked to respectively. All monster have a default critical chance of 10%.
+   - The crit chance of the player can be stored in an float variable called crit in the struct.
+   - The name of the player is stored in a character array called name in the struct.
+   - There is a struct called monster with int variable no, hp and atk. The struct will have three character array called dead, talk and name which store the text to say when being defeated, talked to and its name respectively. All monster have a default critical chance of 10%.
    - Each monster will have a set of unique status (hp, atk, etc) and it is stored individually and can be erased.
 3. Dynamic memory management
    - After each encounter, the data of the opponents is erased from the program to confine memory usage.
@@ -39,10 +39,9 @@ There will be a main menu where the player can choose game modes (start, continu
    - Whether the player has entered the cave before
    - Number of monsters remaining.
    - no (the id) of the reamining monsters. 
-   - an alive array that stores the information about the whether the monsters are alive (1) or dead (0).
+   - an alive array that stores the information about whether the monsters are alive (1) or dead (0).
 5. Program codes in multiple files
-   - Program codes for main menu (game lobby), off-battle (walking in the map) and in-battle (monster encounter) 
-     are separated in different files.
+   - Program codes for main menu (game lobby), off-battle (walking in the map and printing the map), in-battle (battle system and printing the battle menu), saveing the game, loading the game, the final boss encounter and judgement system are separated in different files.
 
 ### Non-standard C/C++ libraries:
    - ncurses.h is used in the game for better user experience when playing the game.
@@ -54,9 +53,9 @@ There will be a main menu where the player can choose game modes (start, continu
    - endwin() is used when existing main.cpp, i.e. terminating the game.
 
 ### Compilation and execution instructions:
-   1. run the command chmod u+x initial.sh in the terminal
-   2. run initial.sh in the terminal
-      - This allows the relevant functions in the non standard library ncurses.h to be used in the game
-   3. make main in the terminal
+   1. run the command "chmod u+x initial.sh" in the terminal.
+   2. run initial.sh in the terminal using "./initial.sh".
+      - This allows the relevant functions in the non standard library ncurses.h to be used in the game.
+   3. "make main" in the terminal
       - This is to generate the target main
-   4. ./main in the terminal and start playing the game.
+   4. "./main" in the terminal and start playing the game.
