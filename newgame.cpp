@@ -15,6 +15,80 @@ using namespace std;
 
 
 
+void print_choice(int choice){
+    clear();
+    if (choice == 1){
+        printw("Please choose one of the powerups below:\n");
+        printw("Sword    <--\n");
+        printw("Potion\n");
+        printw("Gun\n");
+        refresh();
+    }
+    else if (choice == 2){
+        printw("Please choose one of the powerups below:\n");
+        printw("Sword\n");
+        printw("Potion   <--\n");
+        printw("Gun\n");
+        refresh();
+    }
+    else if (choice == 3){
+        printw("Please choose one of the powerups below:\n");
+        printw("Sword\n");
+        printw("Potion\n");
+        printw("Gun      <--\n");
+        refresh();
+    }
+    return;
+}
+
+int cave_op(player_stat *player){
+    int ch;
+    int choice = 1;
+    clear();
+    ch = 0;
+    print_choice(choice);
+    while (ch!=10){
+        if (ch == 259){
+            choice = choice - 1;
+            if (choice < 1){
+                choice = choice + 3;
+            }
+            print_choice(choice);
+        }
+        else if (ch == 258){
+            choice = choice + 1;
+            if (choice > 3){
+                choice = choice - 3;
+            }
+            print_choice(choice);
+        }
+        else if (ch == 261){
+            choice = 3;
+            print_choice(choice);
+        }
+        else if (ch == 260){
+            choice = 1;
+            print_choice(choice);
+        }
+        ch = getch();
+    }
+    if (choice == 1){
+        printw("Your choice is a sword, your attack has increased by 50\nPress any key to go back to map.");
+        player->atk = player->atk + 30;
+        getch();
+    }
+    else if(choice == 2){
+        printw("Your choice is a potion, your hp has been restored\nPress any key to go back to map.");
+        player->hp = 200;
+        getch();
+    }
+    else if(choice == 3){
+        printw("Your choice is a gun, your critical chance has increased\nPress any key to go back to map.");
+        player->crit_chance = 0.5;
+        getch();
+    }
+    return 1;
+}
 
 void newgame(int gstatus){
     clear();
