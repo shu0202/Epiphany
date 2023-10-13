@@ -1,4 +1,4 @@
-# comp2113
+# Epiphany
 ## Team members
 ### Team member 1
 ### shu0202
