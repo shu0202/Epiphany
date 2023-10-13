@@ -59,3 +59,6 @@ There will be a main menu where the player can choose game modes (start, continu
    3. `make main` in the terminal
       - This is to generate the target main
    4. `./main` in the terminal and start playing the game.
+
+### Link to footage of the game
+[Link](https://youtu.be/_pZb1_4eHIc).
